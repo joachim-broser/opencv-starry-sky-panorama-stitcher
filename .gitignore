@@ -1,0 +1,13 @@
+z_orig_filenames.txt
+z_rename.txt
+
+*.xcf
+*.bin
+*.ai
+*.pdf
+*.nb
+
+
+.idea/
+__pycache__/
+docs/img_windbuehl_2022-12-16_19h55m_SHRiNKED/
