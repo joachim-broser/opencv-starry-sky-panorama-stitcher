@@ -42,7 +42,7 @@ def adjust_black_and_white_point(img, black_and_white_point_tpl):
 
 def compute_star_features(img, img_name, output_dir, n_brightest_stars = 500):
     """
-    Fit the hierarchical clustering from features, or distance matrix.
+    Detects stars by Canny Edge Detection, converts them into contours and these contours into keypoints.
 
     Parameters
     ----------

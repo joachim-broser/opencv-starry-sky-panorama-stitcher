@@ -1,3 +1,4 @@
+#!/bin/python3.10
 """
 Stitching daylight images:
 - Finding matches with CustomBruteForceMatcher
@@ -7,7 +8,7 @@ Stitching daylight images:
 - Cameras have to be flipped in x and y direction: my_pano_restored.config.mirror_pano = "x,y" (found out with a
   previous run)
 """
-#!/bin/python3.10
+
 
 import datetime
 

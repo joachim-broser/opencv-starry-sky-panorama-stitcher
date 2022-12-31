@@ -704,6 +704,18 @@ class StitchingDetailedPipeline:
             print("Reading img: {}".format(name))
             full_img = cv.imread(os.path.join(self.config.input_dir, name))
 
+            if "Debug" == 1: 
+                equalize_adapthist = optimize_img_for_feature_detection(full_img.copy())
+                cv.imwrite(
+                    os.path.join(
+                        self.config.dir_features_keypoints,
+                        "equalize_adapthist__{}.jpg".format(
+                            name.replace(".jpg", ""),
+                        )
+                    ),
+                    equalize_adapthist
+                )
+
             if "Check if all images have the same dimensions and the same orientation":
                 image_shapes_tmp[full_img.shape] += 1
                 most_common_image_shape = sorted(image_shapes_tmp.items(), key=lambda x: x[1])[::-1][0][0]

@@ -36,7 +36,7 @@ Star constellations or polygons are compared based on angles, side lengths and s
 
 For a 5-sided polygon like shown above there are 5 vertex angles, 5 side lengths and 5 star brightnesses.
 
-The **vertex angles and side lengths** are **not measured in the image plane**!  The stars from the image plane are Spherical trigonometry. Angles and side lengths are then measured on this sphere leveraging spherical trigonometry:
+The **vertex angles and side lengths** are **not measured in the image plane**!  The stars from the image plane are projected to a sphere in the physical real world. Angles and side lengths are then measured on this sphere leveraging spherical trigonometry. The radius of this sphere does not matter since **side lengths of spherical triangles** are measured in **radian**.
 
 ![](docs/sphere.png)
 
@@ -84,7 +84,15 @@ The remaining stars after clustering:
 
 ![](docs/example_02_colorized_seams_and_edges/2022-12-30_23h31m35s__04_polygon_matches__02-horiz-ne.jpg___10-alt1-ne.jpg/02_remaining_keypoints_after_clustering__02-horiz-ne.jpg___10-alt1-ne.jpg__68kps___72kps.jpg)
 
-##### Matching polygons (star constellations) found by the Custom Star Polygon Matcher
+Star amount was reduced by splitting the image in several regions and reducing the size of clusters per region simultaneously by `sklearn.cluster.AgglomerativeClustering`:
+
+![](docs/cluster_star_reduction_steps.png)
+
+The 12 image regions used for star clustering are:
+
+![](docs/12_image_regions_for_clustering.png)
+
+#### Matching polygons (star constellations) found by the Custom Star Polygon Matcher
 
 ![](docs/example_02_colorized_seams_and_edges/2022-12-30_23h31m35s__04_polygon_matches__02-horiz-ne.jpg___10-alt1-ne.jpg/dist=0.0620__polygon-1708_and_polygon1134__spanned_by_kps(1098-1010-1016-1020-1197)_and(1108-1022-1036-1050-1169).jpg)
 
@@ -378,9 +386,9 @@ TransverseMercator
 
 - Consider **image distortion**. Take some **chessboard** images and remove image distortion. Does this yield better polygon matching results?
 - Add multiprocessing for these (now consecutive) pipeline steps: Star regcognition, star amount reduction by sklearn.cluster.AgglomerativeClustering, polygon measuring
-- 
+- Drop mistakenly detected stars at the horizon edge.
 
-------
+  ![](docs/left-to-do/stars_horizon.png)
 
 December 2022
 

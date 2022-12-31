@@ -18,11 +18,14 @@ from image_processors import optimize_img_for_feature_detection, get_star_bright
 
 class BFPolygonMatcher:
     """
+    As an alternative to cv.BFMatcher (which matches single keypoints), BFPolygonMatcher matches star constellations /
+    polygons.
+
     Finds matches between 2 sets of keypoints (stars) by creating polygons of stars.
     Angles, lengths of sides and star brightness of 2 polygons are compared to find the best match.
 
     Angles and lengths of sides are NOT measured in the image plane.
-    Stars are projected to the physical world sphere.
+    Stars are projected to the physical world sphere. Angles and side lengths are then measured on this sphere.
     Polygon angles are angles of the spherical triangle spanned by 3 stars.
     Polygon side lengths are the side lengts of these spherical triangles and measured in radians.
 
@@ -214,7 +217,7 @@ class BFPolygonMatcher:
             plt.title(f"{img_filename} Estimated number of clusters: {n_clusters_}")
             # plt.show()
 
-            if "Debug" == 1:
+            if "Debug" == "Debug":
                 fig.savefig(
                     "{}/0_removed_clusters_{}__n_clusters={:04d}.jpg".format(
                         self.output_dir,
@@ -352,7 +355,7 @@ class BFPolygonMatcher:
                         0] < horiztontal_rect_w * img_w, keypoint_indices_remaining)),
                 "top_right": list(filter(
                     lambda kp_idx: keypoints[kp_idx].pt[1] < horiztontal_rect_h * img_h and keypoints[kp_idx].pt[0] > (
-                            1 - horiztontal_rect_w) * img_h, keypoint_indices_remaining)),
+                            1 - horiztontal_rect_w) * img_w, keypoint_indices_remaining)),
                 "top_mid": list(filter(
                     lambda kp_idx: keypoints[kp_idx].pt[1] < horiztontal_rect_h * img_h and abs(
                         keypoints[kp_idx].pt[0] - 0.5 * img_w) < horiztontal_rect_w * img_w / 2,

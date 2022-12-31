@@ -11,6 +11,11 @@ import numpy as np
 
 
 class CustomBruteForceMatcher():
+    """
+    An alternative to cv.detail_BestOf2NearestMatcher and cv.detail_BestOf2NearestRangeMatcher, leveraging
+    brute-force matching of any possible 2-image-pair and performing well on starry sky images.
+    Surprisingly, something like this was not available in OpenCV before.
+    """
     def __init__(
             self,
             *,
