@@ -1,0 +1,70 @@
+{
+  "input_dir": "img_windbuehl_2022-12-16_19h03m",
+  "output_dir": "example_04_demonstrate_all_projections",
+  "enforced_matches": [],
+  "img_names": [
+    "03-horiz-e.jpg",
+    "04-horiz-se.jpg",
+    "05-horiz-s.jpg"
+  ],
+  "try_cuda": false,
+  "work_megapix": 1.2,
+  "feature_detector": [
+    "< cv2.ORB 0x7ff9d8e54830>",
+    "orb-for-starry-sky"
+  ],
+  "matcher": "homography",
+  "estimator": "< cv2.detail.HomographyBasedEstimator 0x7ff9d8e54510>",
+  "match_conf": null,
+  "conf_thresh": 1.0,
+  "ba": "< cv2.detail.BundleAdjusterRay 0x7ff9d8e545f0>",
+  "ba_refine_mask": "xxxxx",
+  "wave_correct": null,
+  "save_graph": null,
+  "warp": "stereographic",
+  "seam_megapix": 0.1,
+  "seam": [
+    "< cv2.detail.DpSeamFinder 0x7ff9d8e546b0>",
+    "dp_colorgrad"
+  ],
+  "compose_megapix": 0.6,
+  "expos_comp": 0,
+  "expos_comp_nr_feeds": "1",
+  "expos_comp_nr_filtering": "2",
+  "expos_comp_block_size": 32,
+  "blend": "multiband",
+  "blend_strength": "42",
+  "result_filename": "warp_mode=stereographic",
+  "timelapse": null,
+  "rangewidth": -1,
+  "gif_megapix": 2,
+  "black_and_white_point_adjustment": {
+    "final_panorama": [
+      0,
+      150
+    ]
+  },
+  "disable_all_prompts": true,
+  "colorize_edges": false,
+  "colorize_seams": false,
+  "mirror_pano": null,
+  "rotate_pano_rad": 0,
+  "enforce_star_polygon_matcher": false,
+  "predefined_overlaps": [
+    [
+      0,
+      1
+    ],
+    [
+      1,
+      2
+    ],
+    [
+      2,
+      3
+    ]
+  ],
+  "focal_length_pinhole": 1135,
+  "disable_star_feature_finder": false,
+  "timestamp_main": "2022-12-30_19h58m13s"
+}
