@@ -38,7 +38,7 @@ For a 5-sided polygon like shown above there are 5 vertex angles, 5 side lengths
 
 The **vertex angles and side lengths** are **not measured in the image plane**!  The stars from the image plane are projected to a sphere in the physical real world. Angles and side lengths are then measured on this sphere leveraging spherical trigonometry. The radius of this sphere does not matter since **side lengths of spherical triangles** are measured in **radian**.
 
-![](docs/sphere.png)
+![](docs/projecting_stars_from_the_image_plane_onto_a_sphere.png)
 
 ## The panorama stitching pipeline
 
