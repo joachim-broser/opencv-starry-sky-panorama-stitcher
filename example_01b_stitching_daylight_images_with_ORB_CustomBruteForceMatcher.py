@@ -281,3 +281,5 @@ if "Adjust settings":
 
 pano.pipeline_create_panorama()
 
+
+# Joachim Broser 2022

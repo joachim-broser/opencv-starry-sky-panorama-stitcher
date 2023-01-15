@@ -1375,3 +1375,5 @@ def format_int(int_value):
 
     """
     return "{:,}".format(int_value).replace(",", ".")
+
+# Joachim Broser 2022

@@ -275,3 +275,5 @@ if "Adjust settings":
     pano.config.colorize_seams = False
 
 pano.pipeline_create_panorama()
+
+# Joachim Broser 2022

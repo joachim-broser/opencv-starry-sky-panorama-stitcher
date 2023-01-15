@@ -1983,3 +1983,5 @@ def highlight_border(img, bgr_color_tpl):
 
 if __name__ == '__main__':
     pass
+
+# Joachim Broser 2022

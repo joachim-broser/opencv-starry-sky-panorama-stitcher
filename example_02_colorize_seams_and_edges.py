@@ -328,3 +328,5 @@ if "Adjust settings":
 pano.match_and_bundle_adjust()
 pano.pipeline_colorize_seams_and_edges()
 
+
+# Joachim Broser 2022

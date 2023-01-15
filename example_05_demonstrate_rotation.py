@@ -356,3 +356,5 @@ else:
         pano_restored.config.rotate_pano_rad = rot_angle_deg/180*math.pi
 
         pano_restored.compose_imgs_to_panorama()
+
+# Joachim Broser 2022

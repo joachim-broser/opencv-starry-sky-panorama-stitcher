@@ -1071,3 +1071,5 @@ class CustomBruteForceMatcher():
                 p_itm.dst_img_idx),
                 out_image_w_matches)
             cv.waitKey()
+
+# Joachim Broser 2022

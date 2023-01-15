@@ -252,3 +252,5 @@ def get_star_brightness(keypoint, workscale_image):
 
     brightness = int(np.sum(np.sort(masked_data.flatten())[-10:]))
     return brightness
+
+# Joachim Broser 2022

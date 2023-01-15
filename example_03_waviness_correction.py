@@ -354,3 +354,5 @@ else:
 
 
     pano_restored.compose_imgs_to_panorama()
+
+# Joachim Broser 2022
